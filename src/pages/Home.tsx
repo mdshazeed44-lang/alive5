@@ -115,7 +115,7 @@ export default function Home() {
               key={f.title}
               variants={staggerItem}
               whileHover={{ y: -6 }}
-              className="rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg"
+              className="rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-grey-800"
             >
               <span className="inline-flex size-12 items-center justify-center rounded-xl bg-orange-100 text-alive5-orange">
                 <f.icon className="size-6" />
@@ -154,7 +154,7 @@ export default function Home() {
               <motion.div
                 key={s.n}
                 variants={staggerItem}
-                className="rounded-2xl border border-grey-100 bg-gradient-to-br from-orange-50 to-surface-soft p-8 text-center shadow-sm"
+                className="rounded-2xl border border-grey-100 bg-gradient-to-br from-orange-50 to-surface-soft p-8 text-center shadow-sm dark:border-white/10 dark:from-grey-800 dark:to-grey-900"
               >
                 <p className="text-display font-bold text-alive5-orange">{s.n}</p>
                 <p className="mt-2 text-body text-grey-700">{s.l}</p>
@@ -180,7 +180,7 @@ export default function Home() {
               key={f.title}
               variants={staggerItem}
               whileHover={{ y: -6 }}
-              className="rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg"
+              className="rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-grey-800"
             >
               <span className="inline-flex size-12 items-center justify-center rounded-xl bg-orange-100 text-alive5-orange">
                 <f.icon className="size-6" />

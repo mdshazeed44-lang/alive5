@@ -27,7 +27,7 @@ export function ProductHero({
   imageAlt = '',
 }: Props) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 via-surface-cream to-surface-page pt-36 pb-20 md:pt-44">
+    <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 via-surface-cream to-surface-page pt-36 pb-20 dark:from-[#2a1b14] dark:via-grey-900 dark:to-grey-900 md:pt-44">
       <div className="pointer-events-none absolute -right-24 top-16 h-80 w-80 rounded-full bg-alive5-orange/10 blur-3xl" />
       <div className="pointer-events-none absolute -left-20 bottom-0 h-72 w-72 rounded-full bg-accent-teal/10 blur-3xl" />
       <Container>
@@ -65,7 +65,7 @@ export function ProductHero({
               <motion.div
                 animate={{ y: [0, -12, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-                className="overflow-hidden rounded-3xl border border-grey-100 bg-white shadow-xl"
+                className="overflow-hidden rounded-3xl border border-grey-100 bg-white shadow-xl dark:border-white/10 dark:bg-grey-800"
               >
                 <img src={image} alt={imageAlt} className="block w-full object-contain" />
               </motion.div>

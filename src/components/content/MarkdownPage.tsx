@@ -145,7 +145,7 @@ function ImageCard({ src, className }: { src: string; className?: string }) {
     <motion.div
       whileHover={{ y: -6 }}
       transition={{ duration: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={`overflow-hidden rounded-2xl border border-grey-100 bg-white shadow-md ${className ?? ''}`}
+      className={`overflow-hidden rounded-2xl border border-grey-100 bg-white shadow-md dark:border-white/10 dark:bg-grey-800 ${className ?? ''}`}
     >
       <img src={src} alt="" loading="lazy" className="mx-auto block max-h-[460px] w-full object-contain" />
     </motion.div>
@@ -194,7 +194,7 @@ function CardsSection({ seg, soft }: { seg: Seg; soft: boolean }) {
             key={i}
             variants={staggerItem}
             whileHover={{ y: -6 }}
-            className="flex flex-col rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg"
+            className="flex flex-col rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-grey-800"
           >
             {c.image && (
               <div className="mb-5 flex h-28 items-center justify-center overflow-hidden rounded-xl bg-surface-soft">
@@ -256,7 +256,7 @@ function MiniGrid({ segs, soft }: { segs: Seg[]; soft: boolean }) {
             key={i}
             variants={staggerItem}
             whileHover={{ y: -6 }}
-            className="rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg"
+            className="rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-grey-800"
           >
             <span className="mb-4 inline-flex size-10 items-center justify-center rounded-md bg-orange-100 text-body font-bold text-alive5-orange">
               {i + 1}
@@ -334,7 +334,7 @@ export default function MarkdownPage() {
 
   return (
     <article>
-      <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 via-surface-cream to-surface-page pt-40 pb-20">
+      <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 via-surface-cream to-surface-page pt-40 pb-20 dark:from-[#2a1b14] dark:via-grey-900 dark:to-grey-900">
         <div className="pointer-events-none absolute -right-24 top-12 h-80 w-80 rounded-full bg-alive5-orange/10 blur-3xl" />
         <Container className="max-w-4xl">
           <FadeUp>

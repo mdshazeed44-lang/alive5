@@ -35,7 +35,7 @@ export function CardGrid({ eyebrow, title, subtitle, cards, columns = 3, classNa
             key={c.title}
             variants={staggerItem}
             whileHover={{ y: -6 }}
-            className="flex flex-col rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg"
+            className="flex flex-col rounded-2xl border border-grey-100 bg-white p-7 shadow-sm transition-shadow hover:shadow-lg dark:border-white/10 dark:bg-grey-800"
           >
             {c.image && (
               <div className="mb-5 flex h-28 items-center justify-center overflow-hidden rounded-xl bg-surface-soft">

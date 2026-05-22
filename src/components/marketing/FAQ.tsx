@@ -47,7 +47,7 @@ export function FAQ() {
     <Section className="bg-surface-soft">
       <SectionHeading eyebrow="FAQs" title="Questions, answered" subtitle="Everything you need to know about Alive5 and the pilot." />
       <Container className="mt-12 max-w-3xl !px-0">
-        <div className="divide-y divide-grey-100 overflow-hidden rounded-2xl border border-grey-100 bg-white">
+        <div className="divide-y divide-grey-100 overflow-hidden rounded-2xl border border-grey-100 bg-white dark:divide-white/10 dark:border-white/10 dark:bg-grey-800">
           {FAQS.map((item, i) => {
             const isOpen = open === i;
             return (

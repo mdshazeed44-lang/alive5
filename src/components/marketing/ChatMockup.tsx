@@ -28,9 +28,9 @@ export function TypingDots() {
 
 export function ChatMockup() {
   return (
-    <div className="overflow-hidden rounded-2xl border border-grey-100 bg-white shadow-2xl ring-1 ring-grey-900/5">
+    <div className="overflow-hidden rounded-2xl border border-grey-100 bg-white shadow-2xl ring-1 ring-grey-900/5 dark:border-white/10 dark:bg-grey-800 dark:ring-white/5">
       {/* window header */}
-      <div className="flex items-center gap-3 bg-gradient-to-r from-orange-50 to-surface-cream px-4 py-3.5">
+      <div className="flex items-center gap-3 bg-gradient-to-r from-orange-50 to-surface-cream px-4 py-3.5 dark:from-grey-900 dark:to-grey-800">
         <span className="relative">
           <img src={AVATAR} alt="" className="size-9 rounded-full object-cover ring-2 ring-white" />
           <span className="absolute -bottom-0.5 -right-0.5 size-3 rounded-full border-2 border-white bg-accent-green" />
@@ -57,7 +57,7 @@ export function ChatMockup() {
               className={
                 m.from === 'user'
                   ? 'max-w-[80%] rounded-lg rounded-br-sm bg-alive5-orange px-4 py-2.5 text-small text-white'
-                  : 'max-w-[80%] rounded-lg rounded-bl-sm bg-grey-50 px-4 py-2.5 text-small text-grey-700'
+                  : 'max-w-[80%] rounded-lg rounded-bl-sm bg-grey-50 px-4 py-2.5 text-small text-grey-700 dark:bg-grey-900 dark:text-grey-300'
               }
             >
               {m.text}
@@ -71,13 +71,13 @@ export function ChatMockup() {
           transition={{ delay: 0.6 + MESSAGES.length * 0.5 }}
           className="flex justify-start"
         >
-          <div className="rounded-lg rounded-bl-sm bg-grey-50 px-4 py-3">
+          <div className="rounded-lg rounded-bl-sm bg-grey-50 px-4 py-3 dark:bg-grey-900">
             <TypingDots />
           </div>
         </motion.div>
       </div>
 
-      <div className="mx-4 mb-4 flex items-center gap-2 rounded-md border border-grey-100 bg-surface-soft px-3 py-2.5">
+      <div className="mx-4 mb-4 flex items-center gap-2 rounded-md border border-grey-100 bg-surface-soft px-3 py-2.5 dark:border-white/10">
         <span className="flex-1 text-small text-grey-400">Type a message…</span>
         <span className="inline-flex size-7 items-center justify-center rounded bg-alive5-orange text-white">→</span>
       </div>

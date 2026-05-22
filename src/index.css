@@ -9,7 +9,13 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans text-body text-grey-700 bg-surface-page;
+    @apply font-sans text-body text-grey-700 bg-surface-page transition-colors duration-300;
+  }
+  html.dark body {
+    @apply bg-grey-900 text-grey-300;
+  }
+  html.dark ::selection {
+    @apply bg-orange-700 text-white;
   }
   /* Brand rule: headlines never end with punctuation, sentence case only */
   h1,
@@ -41,6 +47,12 @@
   /* Nav link underline draw-in from left on hover */
   .nav-link {
     @apply relative text-small font-medium text-grey-700 transition-colors hover:text-grey-900;
+  }
+  .dark .nav-link {
+    @apply text-grey-300 hover:text-white;
+  }
+  .dark .btn-ghost {
+    @apply border-white/30 text-grey-100 hover:bg-white/10 hover:text-white;
   }
   .nav-link::after {
     content: '';
@@ -83,6 +95,34 @@
     }
   }
 
+  html.dark [data-nav-morph] {
+    animation: nav-morph-dark ease-in-out both;
+    animation-timeline: scroll();
+    animation-range: 0px 320px;
+  }
+  @keyframes nav-morph-dark {
+    0% {
+      max-width: 100%;
+      border-radius: 0px;
+      background-color: rgba(31, 31, 32, 0);
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      backdrop-filter: blur(0px);
+    }
+    20% {
+      border-radius: 12px;
+      background-color: rgba(31, 31, 32, 0.6);
+      box-shadow: 0 4px 24px -8px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(24px);
+    }
+    100% {
+      max-width: 920px;
+      border-radius: 16px;
+      background-color: rgba(31, 31, 32, 0.75);
+      box-shadow: 0 8px 32px -10px rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(24px);
+    }
+  }
+
   [data-login-morph] {
     animation: login-morph ease-in-out both;
     animation-timeline: scroll();
@@ -103,6 +143,38 @@
       margin-inline: 0px;
     }
   }
+}
+
+/* ===== Dark theme: app-wide neutral surface/text/border mapping =====
+   Maps the light neutral tokens used as section backgrounds and text to dark
+   equivalents. bg-white is intentionally NOT remapped here (cards opt in with
+   dark: variants) so always-light surfaces like the orange CTA button stay white. */
+.dark .bg-surface-page {
+  background-color: #1f1f20;
+}
+.dark .bg-surface-soft {
+  background-color: #26262a;
+}
+.dark .bg-surface-grey {
+  background-color: #26262a;
+}
+.dark .text-grey-900 {
+  color: #f5f5f6;
+}
+.dark .text-grey-800 {
+  color: #e6e6e7;
+}
+.dark .text-grey-700 {
+  color: #c4c4c7;
+}
+.dark .text-grey-600 {
+  color: #a8a8ac;
+}
+.dark .border-grey-100 {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+.dark .border-grey-200 {
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 @media (prefers-reduced-motion: reduce) {

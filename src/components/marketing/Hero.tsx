@@ -18,7 +18,7 @@ export function Hero() {
   const words = HEADLINE.split(' ');
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 via-surface-cream to-surface-page pt-36 pb-20 md:pt-44 md:pb-28">
+    <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 via-surface-cream to-surface-page pt-36 pb-20 dark:from-[#2a1b14] dark:via-grey-900 dark:to-grey-900 md:pt-44 md:pb-28">
       {/* layered backdrop */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.4]"
@@ -40,7 +40,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: EASE }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white/70 px-3.5 py-1.5 text-small font-semibold text-alive5-orange shadow-sm backdrop-blur">
+            <span className="inline-flex items-center gap-2 rounded-full border border-orange-200 bg-white/70 px-3.5 py-1.5 text-small font-semibold text-alive5-orange shadow-sm backdrop-blur dark:border-orange-700/40 dark:bg-white/10">
               <Sparkles className="size-3.5" />
               A.I. trained only on your business
             </span>

@@ -14,7 +14,7 @@ export default function Placeholder() {
   }, [title]);
 
   return (
-    <section className="bg-gradient-to-b from-orange-50 to-surface-page pt-40 pb-28">
+    <section className="bg-gradient-to-b from-orange-50 to-surface-page pt-40 pb-28 dark:from-[#2a1b14] dark:to-grey-900">
       <Container className="max-w-3xl text-center">
         <FadeUp>
           <p className="mb-4 text-small font-semibold uppercase tracking-[0.18em] text-alive5-orange">

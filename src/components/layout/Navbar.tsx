@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import { supportsScrollTimeline } from '@/lib/utils';
+import { ThemeToggle } from './ThemeToggle';
 
 const LOGO_COLOR =
   'https://lirp.cdn-website.com/519d3ac1/dms3rep/multi/opt/Alive5_Logo_RGB_2023-01-high-01-1920w.png';
+const LOGO_WHITE = 'https://lirp.cdn-website.com/519d3ac1/dms3rep/multi/opt/Alive5_Logo_WHT_2023-1920w.png';
 
 interface NavItem {
   label: string;
@@ -57,12 +59,12 @@ function Dropdown({ item }: { item: NavItem }) {
         <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
       </button>
       <div className="invisible absolute left-1/2 top-full z-50 w-60 -translate-x-1/2 pt-3 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100">
-        <div className="rounded-lg border border-grey-100 bg-white/95 p-2 shadow-lg backdrop-blur-md">
+        <div className="rounded-lg border border-grey-100 bg-white/95 p-2 shadow-lg backdrop-blur-md dark:border-white/10 dark:bg-grey-800/95">
           {item.children!.map((c) => (
             <Link
               key={c.to}
               to={c.to}
-              className="block rounded px-3 py-2 text-small font-medium text-grey-700 transition-colors hover:bg-orange-50 hover:text-alive5-orange"
+              className="block rounded px-3 py-2 text-small font-medium text-grey-700 transition-colors hover:bg-orange-50 hover:text-alive5-orange dark:text-grey-300 dark:hover:bg-white/5"
             >
               {c.label}
             </Link>
@@ -113,7 +115,8 @@ export function Navbar() {
         className="flex h-14 w-full max-w-8xl items-center justify-between gap-4 px-4 md:px-5"
       >
         <Link to="/" className="flex shrink-0 items-center" aria-label="Alive5 home">
-          <img src={LOGO_COLOR} alt="Alive5" className="h-7 w-auto md:h-8" />
+          <img src={LOGO_COLOR} alt="Alive5" className="h-7 w-auto dark:hidden md:h-8" />
+          <img src={LOGO_WHITE} alt="Alive5" className="hidden h-7 w-auto dark:block md:h-8" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
@@ -129,6 +132,7 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
+          <ThemeToggle className="size-9" />
           <motion.a
             data-login-morph={native.current ? '' : undefined}
             style={native.current ? undefined : { opacity: loginOpacity }}
@@ -141,7 +145,7 @@ export function Navbar() {
             Schedule a demo
           </Link>
           <button
-            className="inline-flex size-10 items-center justify-center rounded text-grey-700 lg:hidden"
+            className="inline-flex size-10 items-center justify-center rounded text-grey-700 dark:text-grey-200 lg:hidden"
             onClick={() => setOpen(true)}
             aria-label="Open menu"
           >
@@ -162,29 +166,33 @@ export function Navbar() {
               onClick={() => setOpen(false)}
             />
             <motion.div
-              className="fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm flex-col gap-1 overflow-y-auto bg-white p-6 shadow-2xl lg:hidden"
+              className="fixed inset-y-0 right-0 z-50 flex w-[86%] max-w-sm flex-col gap-1 overflow-y-auto bg-white p-6 shadow-2xl dark:bg-grey-900 lg:hidden"
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 280 }}
             >
               <div className="mb-4 flex items-center justify-between">
-                <img src={LOGO_COLOR} alt="Alive5" className="h-7 w-auto" />
-                <button
-                  className="inline-flex size-10 items-center justify-center rounded text-grey-700"
-                  onClick={() => setOpen(false)}
-                  aria-label="Close menu"
-                >
-                  <X className="size-6" />
-                </button>
+                <img src={LOGO_COLOR} alt="Alive5" className="h-7 w-auto dark:hidden" />
+                <img src={LOGO_WHITE} alt="Alive5" className="hidden h-7 w-auto dark:block" />
+                <div className="flex items-center gap-2">
+                  <ThemeToggle className="size-9" />
+                  <button
+                    className="inline-flex size-10 items-center justify-center rounded text-grey-700 dark:text-grey-200"
+                    onClick={() => setOpen(false)}
+                    aria-label="Close menu"
+                  >
+                    <X className="size-6" />
+                  </button>
+                </div>
               </div>
               {NAV.map((item) => (
-                <div key={item.label} className="border-b border-grey-100 py-2">
+                <div key={item.label} className="border-b border-grey-100 py-2 dark:border-white/10">
                   {item.to ? (
                     <Link
                       to={item.to}
                       onClick={() => setOpen(false)}
-                      className="block py-2 text-h4 text-grey-900"
+                      className="block py-2 text-h4 text-grey-900 dark:text-white"
                     >
                       {item.label}
                     </Link>
@@ -198,7 +206,7 @@ export function Navbar() {
                           key={c.to}
                           to={c.to}
                           onClick={() => setOpen(false)}
-                          className="block py-2 pl-3 text-body text-grey-700"
+                          className="block py-2 pl-3 text-body text-grey-700 dark:text-grey-300"
                         >
                           {c.label}
                         </Link>
