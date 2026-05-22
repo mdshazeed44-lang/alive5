@@ -1,0 +1,139 @@
+
+/* ===== Style block 1 ===== */
+@charset "utf-8";
+
+@media (width < 768px) {
+  section[data-astro-cid-yruvjpvr] [data-astro-cid-yruvjpvr] { animation: auto ease 0s 1 normal none running none !important; }
+}
+
+section[data-astro-cid-yruvjpvr] { view-timeline-name: --how-it-works-section; view-timeline-axis: block; }
+
+[data-astro-cid-yruvjpvr][data-timeline-text="primary"] { animation-duration: 100s; animation-timing-function: ease-in-out; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: HowItWorks_S1_Primary; animation-timeline: --how-it-works-section; animation-range: cover; }
+
+[data-astro-cid-yruvjpvr][data-timeline-text="secondary"] { animation-duration: 100s; animation-timing-function: ease-in-out; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: HowItWorks_S1_Secondary; animation-timeline: --how-it-works-section; animation-range: cover; }
+
+@keyframes HowItWorks_S1_Primary { 
+  0%, 14.288%, 16.668% { color: var(--color-fg-default-default); }
+  19.048%, 21.428% { color: var(--color-fg-default-secondary); opacity: 1; transform: translate(0px); }
+  35.716%, 100% { color: var(--color-fg-default-secondary); transform: translate(-100px); opacity: 0; }
+}
+
+@keyframes HowItWorks_S1_Secondary { 
+  0%, 14.288%, 16.668% { opacity: 0; transform: translateY(16px); }
+  19.048%, 21.428% { opacity: 1; transform: translateY(0px); }
+  35.716%, 100% { opacity: 0; transform: translate(100px); }
+}
+
+[data-astro-cid-yruvjpvr][data-card="1"] { animation-duration: 100s; animation-timing-function: ease-in-out; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: HowItWorks_S2_Card; animation-timeline: --how-it-works-section; animation-range: cover; }
+
+[data-astro-cid-yruvjpvr][data-card-caption="1"] { animation-duration: 100s; animation-timing-function: ease-in-out; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: HowItWorks_S2_Caption; animation-timeline: --how-it-works-section; animation-range: cover; }
+
+@keyframes HowItWorks_S2_Card { 
+  0%, 42.856% { transform: rotate(0deg); }
+  57.144%, 100% { transform: rotate(-2deg); }
+}
+
+@keyframes HowItWorks_S2_Caption { 
+  0%, 21.428% { opacity: 0; }
+  35.716%, 42.856% { opacity: 1; }
+  57.144%, 100% { opacity: 0; }
+}
+
+[data-astro-cid-yruvjpvr][data-card="2"] { animation-duration: 100s; animation-timing-function: ease-in-out; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: HowItWorks_S3_Card; animation-timeline: --how-it-works-section; animation-range: cover; }
+
+[data-astro-cid-yruvjpvr][data-card-caption="2"] { animation-duration: 100s; animation-timing-function: ease-in-out; animation-delay: 0s; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: HowItWorks_S3_Caption; animation-timeline: --how-it-works-section; animation-range: cover; }
+
+@keyframes HowItWorks_S3_Card { 
+  0%, 64.284% { transform: rotate(0deg); }
+  78.572%, 100% { transform: rotate(1deg); }
+}
+
+@keyframes HowItWorks_S3_Caption { 
+  0%, 35.716% { opacity: 0; }
+  42.856%, 64.284% { opacity: 1; }
+  78.572%, 100% { opacity: 0; }
+}
+
+[data-astro-cid-jsv4owwv][data-ticker] { will-change: transform; animation: 40s linear 0s infinite normal none paused scroll; }
+
+@keyframes scroll { 
+  0% { transform: translate(0px); }
+  100% { transform: translate(var(--scroll-distance)); }
+}
+
+section[data-astro-cid-zqs4u4nx] { view-timeline-name: --your-safe-section-reveal; view-timeline-axis: block; }
+
+[data-astro-cid-zqs4u4nx][data-timeline-text="primary"] { color: var(--color-fg-default-default); animation-duration: auto; animation-timing-function: ease-in-out; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: YourSafeNow_FadeToSecondary; animation-range: cover 36% cover 48%; animation-timeline: --your-safe-section-reveal; animation-delay: 0.5s; }
+
+[data-astro-cid-zqs4u4nx][data-timeline-text="secondary"] { opacity: 0; animation-duration: auto; animation-timing-function: ease-in-out; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: YourSafeNow_FadeInUp; animation-range: cover 36% cover 48%; animation-timeline: --your-safe-section-reveal; animation-delay: 0.5s; }
+
+[data-astro-cid-zqs4u4nx][data-timeline-text="tertiary"] { opacity: 0; animation-duration: auto; animation-timing-function: ease-in-out; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: YourSafeNow_FadeInUp; animation-range: cover 44% cover 60%; animation-timeline: --your-safe-section-reveal; animation-delay: 0.5s; }
+
+[data-astro-cid-zqs4u4nx][data-timeline-bg] { filter: grayscale(1); animation-duration: auto; animation-timing-function: ease-in-out; animation-iteration-count: 1; animation-direction: normal; animation-fill-mode: both; animation-play-state: running; animation-name: YourSafeNow_GrayscaleToColor; animation-range: cover 36% cover 48%; animation-timeline: --your-safe-section-reveal; animation-delay: 0.5s; }
+
+@keyframes YourSafeNow_FadeToSecondary { 
+  0% { color: var(--color-fg-default-default); }
+  100% { color: var(--color-fg-default-secondary); }
+}
+
+@keyframes YourSafeNow_FadeInUp { 
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes YourSafeNow_GrayscaleToColor { 
+  0% { filter: grayscale(1); }
+  100% { filter: grayscale(0); }
+}
+/* ===== Style block 2 ===== */
+@charset "utf-8";
+
+html.intercom-mobile-messenger-active, html.intercom-mobile-messenger-active > body, html.intercom-modal-open, #intercom-container-body { overflow: hidden !important; }
+
+html.intercom-mobile-messenger-active, html.intercom-mobile-messenger-active > body { position: static !important; transform: none !important; }
+
+html.intercom-mobile-messenger-active > body { height: 0px !important; margin: 0px !important; }
+
+iframe#intercom-frame { position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0px !important; left: 0px !important; border: none !important; display: block !important; z-index: -1 !important; }
+/* ===== Style block 3 ===== */
+@charset "utf-8";
+
+@font-face { font-family: intercom-font; font-display: swap; src: url("https://fonts.intercomcdn.com/messenger-m4/proximanova-regular.woff") format("woff"); }
+
+@font-face { font-family: intercom-font; font-display: swap; src: url("https://fonts.intercomcdn.com/messenger-m4/proximanova-semibold.woff") format("woff"); font-weight: bold; }
+
+@font-face { font-family: intercom-font; font-display: swap; src: url("https://fonts.intercomcdn.com/messenger-m4/proximanova-regular-italic.woff") format("woff"); font-style: italic; }
+
+@font-face { font-family: intercom-font; font-display: swap; src: url("https://fonts.intercomcdn.com/messenger-m4/proximanova-semibold-italic.woff") format("woff"); font-weight: bold; font-style: italic; }
+
+.intercom-namespace div, .intercom-namespace span, .intercom-namespace iframe { font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; font-size-adjust: none; font-size: 100%; font-style: normal; letter-spacing: normal; font-stretch: normal; font-variant: normal; font-weight: normal; text-align-last: initial; text-decoration: none; text-emphasis: none; text-indent: 0px; text-justify: auto; text-shadow: none; text-transform: none; alignment-baseline: baseline; animation-play-state: running; backface-visibility: visible; background-color: transparent; background-image: none; baseline-shift: baseline; border: 0px none transparent; border-radius: 0px; inset: auto; box-decoration-break: slice; box-shadow: none; box-sizing: content-box; caption-side: top; clear: none; clip: auto; color: inherit; column-count: auto; column-fill: balance; column-gap: normal; column-width: auto; content: normal; counter-increment: none; counter-reset: none; cursor: auto; direction: ltr; display: inline; dominant-baseline: auto; empty-cells: show; float: none; height: auto; hyphenate-character: auto; hyphens: manual; image-rendering: auto; line-height: inherit; list-style: outside none disc; margin: 0px; max-height: none; max-width: none; min-height: 0px; min-width: 0px; opacity: 1; orphans: 2; outline-offset: 0px; overflow: visible; padding: 0px; page: auto; break-after: auto; break-before: auto; break-inside: auto; perspective: none; perspective-origin: 50% 50%; pointer-events: auto; position: static; quotes: none; resize: none; size: auto; table-layout: auto; transform: none; transform-origin: 50% 50% 0px; transform-style: flat; unicode-bidi: normal; vertical-align: baseline; white-space: normal; widows: 2; width: auto; word-break: normal; word-spacing: normal; overflow-wrap: normal; z-index: auto; text-align: start; -webkit-font-smoothing: antialiased; }
+
+.intercom-namespace :focus:not(:focus-visible) { outline: none; }
+
+.intercom-namespace div, .intercom-namespace frame { display: block; }
+
+.intercom-namespace .intercom-app { line-height: 1; }
+
+@media print {
+  .intercom-namespace .intercom-app { display: none; }
+}
+
+.intercom-namespace a, .intercom-namespace a:visited, .intercom-namespace .intercom-anchor { color: rgb(22, 22, 22); cursor: pointer; }
+
+.intercom-namespace a:hover, .intercom-namespace .intercom-anchor:hover { color: rgb(47, 47, 47); }
+
+.intercom-namespace a:active, .intercom-namespace .intercom-anchor:active { color: rgb(73, 73, 73); }
+/* ===== Style block 4 ===== */
+@charset "utf-8";
+
+.intercom-namespace .intercom-with-namespace-1gi9qh9 { z-index: 2147483002; position: fixed; bottom: 20px; right: 20px; transform-origin: right bottom; height: min(704px, 100% - 40px); min-height: 80px; width: min(400px, max(0px, -20px + 100dvw)); max-height: 704px; border-radius: 24px; overflow: hidden; transition: width 200ms, height 200ms, max-height 200ms, transform 300ms cubic-bezier(0, 1.2, 1, 1), opacity 83ms ease-out; transform: scale(0); opacity: 0; pointer-events: none; visibility: hidden; }
+
+.intercom-namespace .intercom-with-namespace-1gi9qh9 > iframe { width: 100%; height: 100%; position: absolute; visibility: visible; mask-image: radial-gradient(1px at -10px -10px, transparent 0px, rgb(255, 255, 255) 1px); }
+
+.intercom-namespace .intercom-with-namespace-1gi9qh9 > iframe { pointer-events: none; visibility: hidden; }
+
+.intercom-namespace .intercom-with-namespace-124t0ta { z-index: 2147483002; position: fixed; bottom: 20px; right: 20px; transform-origin: right bottom; height: min(704px, 100% - 40px); min-height: 80px; width: min(400px, max(0px, -20px + 100dvw)); max-height: 704px; border-radius: 24px; overflow: hidden; box-shadow: rgba(9, 14, 21, 0.16) 0px 5px 40px 0px; transition: width 200ms, height 200ms, max-height 200ms, transform 300ms cubic-bezier(0, 1.2, 1, 1), opacity 83ms ease-out; transform: scale(0); opacity: 0; pointer-events: none; visibility: hidden; }
+
+.intercom-namespace .intercom-with-namespace-124t0ta > iframe { width: 100%; height: 100%; position: absolute; visibility: visible; mask-image: radial-gradient(1px at -10px -10px, transparent 0px, rgb(255, 255, 255) 1px); }
+
+.intercom-namespace .intercom-with-namespace-124t0ta > iframe { pointer-events: none; visibility: hidden; }

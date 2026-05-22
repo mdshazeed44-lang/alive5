@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-body text-grey-700 bg-surface-page;
+  }
+  /* Brand rule: headlines never end with punctuation, sentence case only */
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display;
+  }
+  ::selection {
+    @apply bg-orange-200 text-grey-900;
+  }
+}
+
+@layer components {
+  /* Brand-compliant button base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold tracking-wide transition-all duration-200 rounded;
+  }
+  .btn-orange {
+    @apply btn bg-alive5-orange text-white hover:bg-orange-600 hover:-translate-y-0.5 hover:shadow-orange px-6 py-3.5 text-small;
+  }
+  .btn-grey {
+    @apply btn bg-alive5-grey text-white hover:bg-grey-800 hover:-translate-y-0.5 hover:shadow-lg px-6 py-3.5 text-small;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-alive5-grey border-[1.5px] border-alive5-grey hover:bg-alive5-grey hover:text-white px-6 py-3.5 text-small;
+  }
+
+  /* Nav link underline draw-in from left on hover */
+  .nav-link {
+    @apply relative text-small font-medium text-grey-700 transition-colors hover:text-grey-900;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 h-[1.5px] w-0 bg-alive5-orange transition-all duration-300;
+  }
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+}
+
+/* ===== Navbar scroll-morph: native CSS scroll-driven (Twine §2.1) =====
+   Applied only where supported; the React Navbar also runs a Framer Motion
+   fallback gated on !supportsScrollTimeline so the two never double up. */
+@supports (animation-timeline: scroll()) {
+  [data-nav-morph] {
+    animation: nav-morph ease-in-out both;
+    animation-timeline: scroll();
+    animation-range: 0px 320px;
+  }
+  @keyframes nav-morph {
+    0% {
+      max-width: 100%;
+      border-radius: 0px;
+      background-color: rgba(255, 255, 255, 0);
+      box-shadow: 0 0 0 0 rgba(72, 72, 74, 0);
+      backdrop-filter: blur(0px);
+    }
+    20% {
+      border-radius: 12px;
+      background-color: rgba(255, 255, 255, 0.55);
+      box-shadow: 0 4px 24px -8px rgba(72, 72, 74, 0.18);
+      backdrop-filter: blur(24px);
+    }
+    100% {
+      max-width: 920px;
+      border-radius: 16px;
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 8px 32px -10px rgba(72, 72, 74, 0.22);
+      backdrop-filter: blur(24px);
+    }
+  }
+
+  [data-login-morph] {
+    animation: login-morph ease-in-out both;
+    animation-timeline: scroll();
+    animation-range: 0px 220px;
+  }
+  @keyframes login-morph {
+    0% {
+      opacity: 1;
+      width: max-content;
+    }
+    60% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+      width: 0px;
+      padding-inline: 0px;
+      margin-inline: 0px;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
