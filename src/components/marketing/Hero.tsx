@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Sparkles, MessageCircle, Smartphone, ArrowRight } from 'lucide-react';
 import { Container } from '@/components/layout/Container';
@@ -85,13 +84,28 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.6, ease: EASE }}
             className="mt-6 flex flex-col gap-3 sm:flex-row"
           >
-            <Link to="/thank-you" className="btn-orange group !px-7 !py-4 text-body">
+            <a
+              href="https://calendly.com/rohit-consult"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-orange group !px-7 !py-4 text-body"
+            >
               Schedule a live demo
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <a href="#how-it-works" className="btn-ghost !px-7 !py-4 text-body">
-              See how it works
             </a>
+            <button
+              type="button"
+              onClick={() => {
+                const el = document.getElementById('how-it-works');
+                if (!el) return;
+                // Fixed navbar = ~80px; scroll the section just under it
+                const y = el.getBoundingClientRect().top + window.scrollY - 80;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+              }}
+              className="btn-ghost !px-7 !py-4 text-body"
+            >
+              See how it works
+            </button>
           </motion.div>
 
           {/* trust cluster */}
