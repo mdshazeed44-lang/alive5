@@ -13,6 +13,7 @@ import Sports from '@/pages/industries/Sports';
 import HigherEd from '@/pages/industries/HigherEd';
 import Government from '@/pages/industries/Government';
 import About from '@/pages/About';
+import FacebookMessenger from '@/pages/FacebookMessenger';
 
 /** Routes with a hand-designed page component. Everything else renders MarkdownPage. */
 const CUSTOM_PAGES: Record<string, () => JSX.Element> = {
@@ -24,6 +25,7 @@ const CUSTOM_PAGES: Record<string, () => JSX.Element> = {
   '/sms-for-admissions-and-recruiting': HigherEd,
   '/gov': Government,
   '/about-us': About,
+  '/facebook-messenger': FacebookMessenger,
 };
 
 function ScrollToTop() {
