@@ -171,7 +171,7 @@ export default function FacebookMessenger() {
               <h1 className="mt-6 text-h1 leading-[1.04] tracking-tight text-grey-900 md:text-[3.75rem]">
                 One agent console for SMS, web chat, and{' '}
                 <Typewriter
-                  words={['Facebook Messenger.', 'social DMs.', 'every channel.']}
+                  words={['Facebook Messenger', 'social DMs', 'every channel']}
                   className="inline-block bg-gradient-to-r from-[#0084FF] via-[#1877F2] to-[#0066CC] bg-clip-text text-transparent"
                 />
               </h1>

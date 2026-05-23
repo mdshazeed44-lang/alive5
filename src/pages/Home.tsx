@@ -160,7 +160,7 @@ export default function Home() {
           three problems Alive5 solves before the solution slides. */}
       <Section id="how-it-works" className="bg-surface-page">
         <FadeUp className="mx-auto max-w-3xl text-center">
-          <h2 className="text-h2 text-grey-900">Provide exceptional service at the speed of A.I.</h2>
+          <h2 className="text-h2 text-grey-900">Provide exceptional service at the speed of A.I</h2>
           <p className="mt-5 text-body-lg text-grey-700">
             Three problems Alive5 solves the moment you turn it on.
           </p>

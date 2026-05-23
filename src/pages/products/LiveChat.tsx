@@ -162,7 +162,7 @@ export default function LiveChat() {
                 <br />
                 with chat that's{' '}
                 <Typewriter
-                  words={['on-brand.', 'real-time.', 'always on.']}
+                  words={['on-brand', 'real-time', 'always on']}
                   className="inline-block bg-gradient-to-r from-alive5-orange via-orange-500 to-orange-600 bg-clip-text text-transparent"
                 />
               </h1>

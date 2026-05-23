@@ -121,7 +121,7 @@ export default function Crm() {
               <h1 className="mt-6 text-[2.25rem] font-bold leading-[1.04] tracking-tight text-grey-900 sm:text-h1 md:text-[3.75rem]">
                 Grow revenues with{' '}
                 <Typewriter
-                  words={['Salesforce.', 'Dynamics 365.', 'Ellucian.', 'any CRM.']}
+                  words={['Salesforce', 'Dynamics 365', 'Ellucian', 'any CRM']}
                   className="inline-block bg-gradient-to-r from-alive5-orange via-orange-500 to-orange-600 bg-clip-text text-transparent"
                 />
               </h1>

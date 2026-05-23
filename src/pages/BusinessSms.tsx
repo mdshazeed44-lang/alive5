@@ -275,7 +275,7 @@ export default function BusinessSms() {
                 Business SMS,
                 <br />
                 <Typewriter
-                  words={['automated.', 'simplified.', 'elevated.']}
+                  words={['automated', 'simplified', 'elevated']}
                   className="inline-block bg-gradient-to-r from-alive5-orange via-orange-500 to-orange-600 bg-clip-text text-transparent"
                 />
               </h1>

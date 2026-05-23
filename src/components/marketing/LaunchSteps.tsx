@@ -58,9 +58,9 @@ export function LaunchSteps() {
             id="launch-steps-title"
             className="text-h2 leading-[1.05] text-grey-900 md:text-[3rem]"
           >
-            Launch in days, not weeks.{' '}
+            Launch in days, not weeks —{' '}
             <span className="bg-gradient-to-r from-alive5-orange via-orange-500 to-orange-600 bg-clip-text text-transparent">
-              Get results ASAP.
+              get results ASAP
             </span>
           </h2>
         </FadeUp>
