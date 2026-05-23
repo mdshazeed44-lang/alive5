@@ -1103,11 +1103,15 @@ export default function BusinessSms() {
                 <div className="mt-3">
                   <ChatBubble side="right" text="What's your hours this weekend?" />
                 </div>
-                <div className="mt-4 rounded-xl border border-grey-200 bg-white p-3 dark:bg-grey-900/40 dark:border-white/10">
-                  <p className="text-legal font-semibold text-grey-700">Continue on text?</p>
+                <div className="mt-4 rounded-xl border border-grey-200 bg-white p-3 dark:border-white/10 dark:bg-grey-900/40">
+                  <label htmlFor="continue-text-phone" className="text-legal font-semibold text-grey-700">
+                    Continue on text?
+                  </label>
                   <input
+                    id="continue-text-phone"
                     type="tel"
                     placeholder="+1 (555) 555-5555"
+                    aria-label="Phone number to continue conversation via text"
                     className="mt-2 w-full rounded-lg border border-grey-200 bg-grey-50 px-3 py-2 text-small text-grey-900 outline-none transition-colors focus:border-alive5-orange dark:bg-grey-900 dark:text-white"
                   />
                   <button

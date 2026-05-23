@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { getPageContent } from '@/lib/markdown';
@@ -8,6 +7,7 @@ import { Container } from '@/components/layout/Container';
 import { Section } from '@/components/layout/Section';
 import { FadeUp, Stagger, staggerItem } from '@/components/motion/FadeUp';
 import { InlineText } from './InlineText';
+import { SEOHead } from '@/components/seo/SEOHead';
 import Placeholder from '@/pages/Placeholder';
 
 type Heading = Extract<Block, { type: 'heading' }>;
@@ -306,16 +306,18 @@ export default function MarkdownPage() {
   const slug = meta?.slug;
   const content = slug ? getPageContent(slug, meta?.title) : null;
 
-  useEffect(() => {
-    if (content) document.title = `${content.title} | Alive5`;
-  }, [content]);
-
   if (!content || (content.hero.titleLines.length === 0 && content.blocks.length === 0)) {
     return <Placeholder />;
   }
 
   const { hero, blocks } = content;
   const segs = segmentize(blocks);
+
+  // Build a description from the first paragraph for SEO.
+  const firstPara = blocks.find((b): b is Extract<Block, { type: 'para' }> => b.type === 'para');
+  const seoDescription = firstPara
+    ? plain(firstPara.text).slice(0, 160)
+    : `${content.title} — Alive5 unified inbox A.I. chatbot for SMS, web chat, and social messaging.`;
 
   // Build a render plan, merging consecutive "mini" segments into one card grid.
   type Item = { kind: Kind; segs: Seg[] };
@@ -334,6 +336,11 @@ export default function MarkdownPage() {
 
   return (
     <article>
+      <SEOHead
+        title={`${content.title} | Alive5`}
+        description={seoDescription}
+        canonical={`https://www.alive5.com${pathname}`}
+      />
       <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 via-surface-cream to-surface-page pt-40 pb-20 dark:from-[#2a1b14] dark:via-grey-900 dark:to-grey-900">
         <div className="pointer-events-none absolute -right-24 top-12 h-80 w-80 rounded-full bg-alive5-orange/10 blur-3xl" />
         <Container className="max-w-4xl">

@@ -156,7 +156,7 @@ function ScreenDashboard() {
         <span className="text-legal font-medium uppercase tracking-wider">Week of Jul 14</span>
       </div>
       <h3 className="mt-2 text-h4 font-bold text-grey-900">Conversation intelligence</h3>
-      <div className="mt-5 grid grid-cols-3 gap-3">
+      <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {[
           ['1,284', 'conversations'],
           ['92%', 'A.I. resolved'],

@@ -103,16 +103,30 @@ export function Footer() {
             ))}
           </div>
           <div className="flex items-center gap-4">
-            <a href="https://facebook.com/wearealive5" aria-label="Facebook" className="text-grey-500 hover:text-white">
+            <a
+              href="https://facebook.com/wearealive5"
+              aria-label="Alive5 on Facebook"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-grey-500 transition-colors hover:text-white"
+            >
               <Facebook className="size-5" />
             </a>
-            <a href="https://twitter.com/wearealive5" aria-label="Twitter" className="text-grey-500 hover:text-white">
+            <a
+              href="https://twitter.com/wearealive5"
+              aria-label="Alive5 on Twitter"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-grey-500 transition-colors hover:text-white"
+            >
               <Twitter className="size-5" />
             </a>
             <a
               href="https://www.linkedin.com/company/alive5/"
-              aria-label="LinkedIn"
-              className="text-grey-500 hover:text-white"
+              aria-label="Alive5 on LinkedIn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-grey-500 transition-colors hover:text-white"
             >
               <Linkedin className="size-5" />
             </a>
