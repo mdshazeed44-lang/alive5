@@ -164,7 +164,7 @@ function ScreenDashboard() {
         ].map(([n, l]) => (
           <div
             key={l}
-            className="rounded-xl bg-gradient-to-br from-surface-soft to-orange-50 p-3 ring-1 ring-black/[0.03]"
+            className="rounded-xl bg-gradient-to-br from-surface-soft to-orange-50 p-3 ring-1 ring-black/[0.03] dark:from-grey-800 dark:to-grey-800 dark:ring-white/10"
           >
             <p className="text-h4 font-bold text-grey-900">{n}</p>
             <p className="text-legal text-grey-500">{l}</p>
