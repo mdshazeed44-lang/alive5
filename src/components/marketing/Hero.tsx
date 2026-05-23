@@ -18,7 +18,7 @@ export function Hero() {
   const words = HEADLINE.split(' ');
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-orange-50 via-surface-cream to-surface-page pt-36 pb-20 dark:from-[#2a1b14] dark:via-grey-900 dark:to-grey-900 md:pt-44 md:pb-28">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-b from-orange-50 via-surface-cream to-surface-page pt-24 pb-10 dark:from-[#2a1b14] dark:via-grey-900 dark:to-grey-900 md:pt-28 md:pb-14">
       {/* layered backdrop */}
       <div
         className="pointer-events-none absolute inset-0 opacity-[0.4]"
@@ -33,7 +33,7 @@ export function Hero() {
       <div className="pointer-events-none absolute -left-24 top-20 size-72 rounded-full bg-orange-200/40 blur-3xl" />
       <div className="pointer-events-none absolute right-0 top-40 size-96 rounded-full bg-accent-light-blue/30 blur-3xl" />
 
-      <Container className="relative grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <Container className="relative grid w-full items-center gap-8 lg:grid-cols-2 lg:gap-12">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 12 }}
@@ -51,7 +51,7 @@ export function Hero() {
             initial="hidden"
             animate="show"
             variants={{ hidden: {}, show: { transition: { staggerChildren: 0.05, delayChildren: 0.12 } } }}
-            className="mt-6 text-[40px] font-bold leading-[1.05] tracking-tight text-grey-900 sm:text-[56px] lg:text-h1"
+            className="mt-4 text-[34px] font-bold leading-[1.05] tracking-tight text-grey-900 sm:text-[44px] lg:text-[56px] xl:text-[64px]"
           >
             {words.map((w, i) => (
               <span key={i} className="inline-block overflow-hidden pb-1">
@@ -73,7 +73,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45, ease: EASE }}
-            className="mt-6 max-w-xl text-body-lg text-grey-700"
+            className="mt-4 max-w-xl text-body-lg text-grey-700"
           >
             A shared inbox where every customer question gets answered — by your team or A.I. that knows your
             business.
@@ -83,7 +83,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.6, ease: EASE }}
-            className="mt-9 flex flex-col gap-3 sm:flex-row"
+            className="mt-6 flex flex-col gap-3 sm:flex-row"
           >
             <Link to="/thank-you" className="btn-orange group !px-7 !py-4 text-body">
               Schedule a live demo
@@ -99,7 +99,7 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.85 }}
-            className="mt-9 flex items-center gap-4"
+            className="mt-6 flex items-center gap-4"
           >
             <div className="flex -space-x-2.5">
               {AVATARS.map((src) => (

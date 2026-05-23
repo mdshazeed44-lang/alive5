@@ -1,15 +1,11 @@
-import { Marquee } from '@/components/motion/Marquee';
 import { Container } from '@/components/layout/Container';
 import { FadeUp } from '@/components/motion/FadeUp';
 
-const SECTORS = [
-  'Professional sports',
-  'College athletics',
-  'Government',
-  'Higher education',
-  'Healthcare',
-  'Retail & eCommerce',
-  'Tourism',
+const CLIENTS = [
+  { name: 'MyPlates', src: '/logos/logo-myplates-640w.png' },
+  { name: 'US District Courts', src: '/logos/logo-uscourts-55d77c8a-640w.png' },
+  { name: 'Orlando City SC', src: '/logos/logo-orlando-640w.png' },
+  { name: 'Collegeboxes', src: '/logos/logo-collegeboxes-640w.png' },
 ];
 
 export function TrustBand() {
@@ -20,18 +16,20 @@ export function TrustBand() {
           Trusted by professional and college sports, government, higher education, and retail
         </p>
       </FadeUp>
-      <div className="mt-8">
-        <Marquee>
-          {SECTORS.map((s) => (
-            <span
-              key={s}
-              className="whitespace-nowrap text-h4 font-semibold text-grey-300 transition-colors hover:text-grey-500"
-            >
-              {s}
-            </span>
+
+      <FadeUp delay={0.1} className="mt-10">
+        <div className="flex flex-wrap items-center justify-center gap-x-14 gap-y-10 md:gap-x-20">
+          {CLIENTS.map((c) => (
+            <img
+              key={c.name}
+              src={c.src}
+              alt={c.name}
+              loading="lazy"
+              className="h-20 w-auto max-w-[260px] object-contain transition-transform duration-300 hover:scale-105 md:h-24"
+            />
           ))}
-        </Marquee>
-      </div>
+        </div>
+      </FadeUp>
     </Container>
   );
 }

@@ -1,0 +1,32 @@
+# Alive5
+
+> Alive5 is a unified inbox A.I. chatbot platform that automates customer
+> conversations across live chat, SMS, and social messaging. The A.I. is
+> trained only on your business knowledge — zero hallucinations, your data
+> stays private. Live in days, not weeks. SOC 2 Type 2 + GDPR compliant.
+
+## Key facts
+
+- **Resolution rate:** 90%+ of inquiries answered by A.I.
+- **ROI:** 5× — $1 spent saves $5 (guaranteed)
+- **Channels:** Live web chat, SMS / texting, Facebook Messenger, email inbox
+- **Pricing:**
+  - 60-day pilot: $500 one-time, done-for-you launch + training + reporting
+  - Go Live: $1 per A.I. conversation, $500/mo minimum, volume discounts
+  - Add-ons: $30/mo per user license, $0.03/credit SMS
+- **Infrastructure:** Amazon Bedrock + Anthropic Claude, private VPC, zero data retention
+- **Compliance:** SOC 2 Type 2, GDPR, BAA available
+
+## Pages
+
+- [Home](https://www.alive5.com/)
+- [Live chat](https://www.alive5.com/live-chat)
+- [Business SMS](https://www.alive5.com/business-sms)
+- [Pricing](https://www.alive5.com/pricing)
+- [Security overview](https://www.alive5.com/security-overview)
+- [About](https://www.alive5.com/about-us)
+
+## Contact
+
+- Sales: schedule a demo at https://meet.alive5.com/demo
+- Company: Alive Technologies Inc.

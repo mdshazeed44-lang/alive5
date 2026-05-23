@@ -4,13 +4,6 @@ import { Container } from './Container';
 
 const LOGO_WHITE = 'https://lirp.cdn-website.com/519d3ac1/dms3rep/multi/opt/Alive5_Logo_WHT_2023-1920w.png';
 
-const BADGES = [
-  { src: 'https://lirp.cdn-website.com/519d3ac1/dms3rep/multi/opt/logo_aws-84d4533b-662w.png', alt: 'AWS Partner' },
-  { src: 'https://lirp.cdn-website.com/519d3ac1/dms3rep/multi/opt/SOC_CPA_Blue-1920w.png', alt: 'SOC 2 compliant' },
-  { src: 'https://lirp.cdn-website.com/519d3ac1/dms3rep/multi/opt/pci-1920w.png', alt: 'PCI compliant' },
-  { src: 'https://lirp.cdn-website.com/519d3ac1/dms3rep/multi/opt/Techstars-alive5-1920w.png', alt: 'Techstars' },
-];
-
 const COLUMNS: { title: string; links: { label: string; to: string }[] }[] = [
   {
     title: 'Platform',
@@ -66,25 +59,6 @@ const LEGAL: { label: string; to: string }[] = [
 export function Footer() {
   return (
     <footer className="bg-grey-900 text-grey-300">
-      {/* Trust badge band */}
-      <div className="border-b border-white/10">
-        <Container className="py-12">
-          <p className="text-center text-legal font-semibold uppercase tracking-[0.18em] text-grey-500">
-            Trusted & compliant
-          </p>
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-4">
-            {BADGES.map((b) => (
-              <div
-                key={b.alt}
-                className="flex h-16 w-36 items-center justify-center rounded-xl bg-white px-5 shadow-sm"
-              >
-                <img src={b.src} alt={b.alt} className="max-h-9 w-auto object-contain" loading="lazy" />
-              </div>
-            ))}
-          </div>
-        </Container>
-      </div>
-
       <Container className="py-16">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:grid-cols-5">
           <div className="col-span-2 md:col-span-3 lg:col-span-1">

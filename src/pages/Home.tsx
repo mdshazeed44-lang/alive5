@@ -20,7 +20,12 @@ import { Hero } from '@/components/marketing/Hero';
 import { ChatShowcase } from '@/components/marketing/ChatShowcase';
 import { TrustBand } from '@/components/marketing/TrustBand';
 import { SlidingDeck } from '@/components/marketing/SlidingDeck';
+import { StorylaneDemo } from '@/components/marketing/StorylaneDemo';
+import { PilotPricing } from '@/components/marketing/PilotPricing';
+import { ProductPillars } from '@/components/marketing/ProductPillars';
+import { LaunchSteps } from '@/components/marketing/LaunchSteps';
 import { FAQ } from '@/components/marketing/FAQ';
+import { SEOHead } from '@/components/seo/SEOHead';
 import { SectionHeading } from '@/components/sections/SectionHeading';
 import { Section } from '@/components/layout/Section';
 import { Container } from '@/components/layout/Container';
@@ -42,13 +47,6 @@ const HANDOFF = [
   { icon: Database, title: 'CRM integration', body: 'Push chats to Salesforce, Microsoft Dynamics, or HubSpot.' },
 ];
 
-const LAUNCH = [
-  { title: 'Add knowledge', body: 'Gather your support docs, PDFs, and web pages.' },
-  { title: 'Train the A.I.', body: 'Ask questions internally to check accuracy and adjust content.' },
-  { title: 'Train your team', body: 'Set up a team training session to learn the ropes.' },
-  { title: 'Launch!', body: 'Deploy your chat widgets, links, QR codes, and SMS numbers.' },
-];
-
 const PROBLEMS = [
   {
     icon: Users,
@@ -67,15 +65,99 @@ const PROBLEMS = [
   },
 ];
 
+/** JSON-LD blocks for the homepage — AEO/GEO-friendly structured data. */
+const HOME_JSONLD = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Alive5',
+    url: 'https://www.alive5.com/',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: 'https://www.alive5.com/search?q={search_term_string}',
+      'query-input': 'required name=search_term_string',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Alive5 A.I. Chatbot',
+    description:
+      'Unified inbox A.I. chatbot trained only on your business knowledge. Live chat, SMS, and social messaging in one place.',
+    brand: { '@type': 'Brand', name: 'Alive5' },
+    offers: {
+      '@type': 'AggregateOffer',
+      priceCurrency: 'USD',
+      lowPrice: '1',
+      highPrice: '500',
+      offerCount: '2',
+      offers: [
+        { '@type': 'Offer', name: '60 Day Pilot', price: '500', priceCurrency: 'USD' },
+        { '@type': 'Offer', name: 'Go Live (per conversation)', price: '1', priceCurrency: 'USD' },
+      ],
+    },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '120',
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'What is Alive5?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Alive5 is a unified inbox A.I. chatbot platform that automates customer conversations across live chat, SMS, and social — trained only on your business knowledge with 90%+ A.I. resolution and 5× ROI.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How is Alive5 priced?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Alive5 offers a $500 one-time 60-day pilot (done-for-you launch + training + reporting) and a $1-per-A.I.-conversation Go Live plan with a $500 monthly minimum and automatic volume discounts.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'Is Alive5 enterprise-ready?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Yes. Alive5 is SOC 2 Type 2 and GDPR compliant with zero data retention, private VPC deployment, BAA available, and runs on Amazon Bedrock and Anthropic Claude.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: 'How long does Alive5 take to launch?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Most customers go live in days, not weeks. The 60-day pilot includes a done-for-you launch, team training, and usage analysis regardless of volume.',
+        },
+      },
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <>
+      <SEOHead
+        title="A.I. Chatbots for Customer Service | Alive5"
+        description="Alive5 is the unified inbox where every customer question gets answered — by your team or A.I. trained only on your business. Live chat, SMS, and social messaging in one place. 90%+ answered by A.I., 5× ROI guaranteed."
+        canonical="https://www.alive5.com/"
+        ogImage="https://lirp.cdn-website.com/519d3ac1/dms3rep/multi/opt/Alive5_Logo_RGB_2023-01-high-01-1920w.png"
+        jsonLd={HOME_JSONLD}
+      />
       <Hero />
       <ChatShowcase />
       <TrustBand />
-      <SlidingDeck />
 
-      {/* Problem section — scroll-reveal (Twine §2.2 pattern, Framer cross-browser path) */}
+      {/* Problem section — comes BEFORE the SlidingDeck so users see the
+          three problems Alive5 solves before the solution slides. */}
       <Section id="how-it-works" className="bg-surface-page">
         <FadeUp className="mx-auto max-w-3xl text-center">
           <h2 className="text-h2 text-grey-900">Provide exceptional service at the speed of A.I.</h2>
@@ -100,6 +182,29 @@ export default function Home() {
             </motion.div>
           ))}
         </Stagger>
+      </Section>
+
+      <SlidingDeck />
+
+      {/* A team inbox for streamlined messaging — self-hosted Storylane demo */}
+      <Section id="team-inbox" className="bg-white dark:bg-grey-900">
+        <FadeUp className="mx-auto max-w-3xl text-center">
+          <h2 className="text-h2 text-grey-900">
+            A team inbox for{' '}
+            <span className="text-alive5-orange">streamlined messaging</span>
+          </h2>
+          <p className="mt-5 text-body-lg text-grey-700">
+            Handle multiple conversations, customer segments, and manage access across your entire
+            organization via web browser and mobile app. Works across{' '}
+            <strong className="font-semibold text-grey-900">live web chat</strong>,{' '}
+            <strong className="font-semibold text-grey-900">SMS</strong>, and{' '}
+            <strong className="font-semibold text-grey-900">social</strong> messaging.
+          </p>
+        </FadeUp>
+
+        <FadeUp delay={0.15} className="mt-12">
+          <StorylaneDemo />
+        </FadeUp>
       </Section>
 
       {/* A.I. trained only on your business */}
@@ -167,6 +272,9 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* 3 product pillars: training, insights, enterprise-ready */}
+      <ProductPillars />
+
       {/* Human handoff */}
       <Section className="bg-surface-soft">
         <SectionHeading
@@ -192,27 +300,13 @@ export default function Home() {
         </Stagger>
       </Section>
 
-      {/* Launch steps */}
-      <Section>
-        <SectionHeading
-          eyebrow="Get started"
-          title="Launch in days, not weeks"
-          subtitle="Get results ASAP with a simple, guided rollout."
-        />
-        <Stagger className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {LAUNCH.map((s, i) => (
-            <motion.div key={s.title} variants={staggerItem} className="relative">
-              <span className="mb-5 inline-flex size-11 items-center justify-center rounded-full bg-alive5-orange text-body font-bold text-white shadow-orange">
-                {i + 1}
-              </span>
-              <h3 className="text-h4 text-grey-900">{s.title}</h3>
-              <p className="mt-2 text-body text-grey-700">{s.body}</p>
-            </motion.div>
-          ))}
-        </Stagger>
-      </Section>
+      {/* "Do It For You" unlimited pilot pricing */}
+      <PilotPricing />
 
       <FAQ />
+
+      {/* Illustrated "Launch in days, not weeks" steps — final pre-CTA */}
+      <LaunchSteps />
 
       {/* CTA banner */}
       <Section bleed className="!py-0">

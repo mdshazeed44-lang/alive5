@@ -176,6 +176,24 @@
 .dark .border-grey-200 {
   border-color: rgba(255, 255, 255, 0.14);
 }
+/* Subtle grey utility backgrounds — used by tables, dividers, sub-cards.
+   bg-white is intentionally NOT remapped (CTA buttons rely on white).
+   Component cards that use bg-white should add an explicit dark:bg-grey-800. */
+.dark .bg-grey-50 {
+  background-color: #26262a;
+}
+.dark .bg-grey-100 {
+  background-color: #2a2a2e;
+}
+.dark .text-grey-500 {
+  color: #8e8e94;
+}
+.dark .text-grey-400 {
+  color: #6a6a70;
+}
+.dark .ring-grey-200 {
+  --tw-ring-color: rgba(255, 255, 255, 0.14);
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,
