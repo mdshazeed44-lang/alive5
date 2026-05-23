@@ -49,7 +49,7 @@ export function SlidingDeck() {
           {SLIDES.map((c, i) => (
             <div
               key={i}
-              className="min-h-[32rem] overflow-hidden rounded-[2rem] border border-grey-200 bg-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]"
+              className="min-h-[32rem] overflow-hidden rounded-[2rem] border border-grey-200 bg-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)] dark:border-white/10 dark:bg-grey-800"
               style={{ position: 'sticky', top: '6rem' }}
             >
               <StackCard slide={i} copy={c} />
@@ -88,7 +88,7 @@ function Device({ slide }: { slide: number }) {
   return (
     <div className="relative mx-auto w-full max-w-xl">
       <div className="relative rounded-[1.75rem] border border-grey-200 bg-grey-900 p-2.5 shadow-[0_20px_60px_-20px_rgba(0,0,0,0.35)]">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-white">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-white dark:bg-grey-900">
           <Screen slide={slide} />
         </div>
 
@@ -135,7 +135,7 @@ function ScreenAlert() {
         <div className="ml-auto max-w-[72%] rounded-2xl rounded-br-md bg-alive5-orange px-5 py-3 text-small font-medium text-white shadow-md">
           Is the VIP suite available this Saturday?
         </div>
-        <div className="max-w-[78%] rounded-2xl rounded-bl-md bg-white px-5 py-3 text-small text-grey-700 shadow-md">
+        <div className="max-w-[78%] rounded-2xl rounded-bl-md bg-white px-5 py-3 text-small text-grey-700 shadow-md dark:bg-grey-800">
           Yes — suite 204 is open. I've flagged this to your events team and they'll text you to confirm. ✓
         </div>
       </div>
@@ -150,7 +150,7 @@ function ScreenDashboard() {
     ['Parking and entry info', '17 chats'],
   ];
   return (
-    <div className="h-full w-full bg-white p-7">
+    <div className="h-full w-full bg-white p-7 dark:bg-grey-900">
       <div className="flex items-center gap-2 text-grey-400">
         <BarChart3 className="size-4 text-alive5-orange" />
         <span className="text-legal font-medium uppercase tracking-wider">Week of Jul 14</span>
@@ -176,7 +176,7 @@ function ScreenDashboard() {
         {blockers.map(([q, c]) => (
           <div
             key={q}
-            className="flex items-center justify-between rounded-lg border border-grey-100 bg-white px-3 py-2 shadow-sm"
+            className="flex items-center justify-between rounded-lg border border-grey-100 bg-white px-3 py-2 shadow-sm dark:bg-grey-800"
           >
             <span className="text-small text-grey-700">{q}</span>
             <span className="text-legal font-medium text-alive5-orange">{c}</span>

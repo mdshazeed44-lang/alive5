@@ -135,7 +135,7 @@ export function StorylaneDemo() {
         {/* Image stage — native frame ratio is 2560×1448 ≈ 1.768:1.
            object-contain keeps the full screen visible (no crop) on every
            viewport, with white letterboxing only on extreme aspect ratios. */}
-        <div className="relative w-full bg-white" style={{ aspectRatio: '2560 / 1448' }}>
+        <div className="relative w-full bg-white dark:bg-grey-900" style={{ aspectRatio: '2560 / 1448' }}>
           <AnimatePresence mode="sync">
             <motion.img
               key={`img-${step}`}
@@ -158,7 +158,7 @@ export function StorylaneDemo() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.35, ease: [0.21, 0.47, 0.32, 0.98] }}
-              className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-grey-200 bg-white px-6 py-5 text-center shadow-2xl ring-1 ring-black/5"
+              className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rounded-xl border border-grey-200 bg-white px-6 py-5 text-center shadow-2xl ring-1 ring-black/5 dark:border-white/10 dark:bg-grey-800"
               style={{ width: 'min(80%, 360px)' }}
             >
               <div
@@ -199,7 +199,7 @@ export function StorylaneDemo() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.3, delay: 0.15 }}
-                className="absolute z-20 rounded-lg border border-grey-200 bg-white p-3 text-grey-900 shadow-xl"
+                className="absolute z-20 rounded-lg border border-grey-200 bg-white p-3 text-grey-900 shadow-xl dark:border-white/10 dark:bg-grey-800"
                 style={{
                   left: `${current.offset.x}%`,
                   top: `${current.offset.y}%`,

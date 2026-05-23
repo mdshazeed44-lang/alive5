@@ -67,7 +67,7 @@ export function ChatShowcase() {
                 show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.5, ease: EASE } },
               }}
               whileHover={{ y: -4 }}
-              className="flex flex-col gap-3 rounded-xl border border-grey-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md"
+              className="flex flex-col gap-3 rounded-xl border border-grey-100 bg-white p-5 shadow-sm transition-shadow hover:shadow-md dark:bg-grey-800"
             >
               <span className={`text-legal font-semibold uppercase tracking-wider ${c.color}`}>{c.tag}</span>
               <p className="text-small leading-relaxed text-grey-700">{c.text}</p>

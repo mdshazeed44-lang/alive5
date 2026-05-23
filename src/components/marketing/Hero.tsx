@@ -176,7 +176,7 @@ function FloatingChip({
     <motion.div
       animate={{ y: [0, -10, 0] }}
       transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut', delay }}
-      className={`absolute hidden items-center gap-2.5 rounded-xl border border-grey-100 bg-white/90 px-3.5 py-2.5 shadow-lg backdrop-blur sm:flex ${className}`}
+      className={`absolute hidden items-center gap-2.5 rounded-xl border border-grey-100 bg-white/90 px-3.5 py-2.5 shadow-lg backdrop-blur dark:bg-grey-800/90 sm:flex ${className}`}
     >
       <span className="inline-flex size-8 items-center justify-center rounded-lg bg-surface-soft">{icon}</span>
       <div className="leading-tight">
